@@ -7,7 +7,7 @@ var load = exports.load = function(dir, regex, cb) {
     
     /* execute findit for this directory */
     var finder = findit.find(dir),
-        files = [];
+        files = {};
     
     /* for each file */
     finder.on('file', function(file) {
@@ -16,8 +16,7 @@ var load = exports.load = function(dir, regex, cb) {
         if (!regex.test(file)) return;
         
         /* require each validated file */
-        files.push(file);
-        require(file);
+        files[file] = require(file);
     });
     
     /* when done return without error and with files */
