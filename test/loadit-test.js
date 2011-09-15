@@ -13,7 +13,7 @@ vows.describe('loadit callback').addBatch({
         },
         
         'when called' : {
-            'topic' : function(loadFn) {
+            topic : function(loadFn) {
                 loadFn(dir, regex, this.callback);
             },
             
