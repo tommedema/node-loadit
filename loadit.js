@@ -1,7 +1,7 @@
 var findit = require('findit');
 
 var load = exports.load = function(dir, regex, cb) {
-    if (typeof(dir) !== 'string' || !(t instanceof RegExp)) {
+    if (typeof(dir) !== 'string' || !(regex instanceof RegExp)) {
         return (typeof(cb) === 'function') ? cb('invalid dir or regexp given') : null;
     }
     
