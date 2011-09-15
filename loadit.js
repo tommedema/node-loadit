@@ -17,7 +17,7 @@ var load = exports.load = function(dir, regex, cb) {
         
         /* require each validated file */
         files.push(file);
-        require(dir + '/' + file);
+        require(file);
     });
     
     /* when done return without error and with files */
