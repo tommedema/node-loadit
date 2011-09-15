@@ -5,6 +5,11 @@ Asynchronously loads (requires) all files in the given directory and all recursi
 
 Note: the given directory must not end with a slash.
 
+Install
+----------
+
+    npm install loadit
+
 Example 1
 ----------
 
