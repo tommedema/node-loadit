@@ -6,19 +6,29 @@ var vows    = require('vows'),
 
 vows.describe('loadit callback').addBatch({
     'Load property': {
-        topic: loadit.load,
+        topic: function() {
+            return loadit.load;
+        },
         
         'is defined as a function' : function(loadFn) {
             assert.deepEqual(typeof(loadFn), 'function');
         },
         
         'when called' : {
-            topic : function(loadFn) {
-                loadFn(dir, regex, this.callback);
+            topic : function() {
+                loadit.load(dir, regex, this.callback);
             },
             
-            'results in a list of .js files': function(err, files) {
-                
+            'does not result in an error' : function(err, files) {
+                assert.isNull(err);
+            },
+            
+            'results in an array of .js files': function(err, files) {
+                assert.isArray(files);
+            },
+            
+            'has at least one file': function(err, files) {
+                assert.isNotZero(files.length);
             }
         }
     }
