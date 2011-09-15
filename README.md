@@ -3,6 +3,8 @@ loadit
 
 Asynchronously loads (requires) all files in the given directory and all recursive subdirectories that match the given regular expression.
 
+Note: the given directory must not end with a slash.
+
 Example 1
 ----------
 
