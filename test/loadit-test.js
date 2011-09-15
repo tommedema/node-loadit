@@ -33,6 +33,10 @@ vows.describe('loadit callback').addBatch({
             
             'equals all js files': function(err, files) {
                 assert.deepEqual(files.sort(), [__dirname + '/folder1/file1.js', __dirname + '/folder1/folder2/folder3/file3.js'].sort());
+            },
+            
+            'file1 has been loaded': function(err, files) {
+                assert.deepEqual(global.FILE1TEST, true);
             }
         }
     }
